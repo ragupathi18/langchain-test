@@ -7,7 +7,7 @@ from langchain.schema import StrOutputParser
 
 llm = HuggingFaceEndpoint(
         endpoint_url="https://z8dvl7fzhxxcybd8.eu-west-1.aws.endpoints.huggingface.cloud",
-        huggingfacehub_api_token="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",
+        huggingfacehub_api_token=****
         task="text2text-generation",
         model_kwargs={
             "max_new_tokens": 200
