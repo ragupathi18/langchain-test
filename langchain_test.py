@@ -5,6 +5,12 @@ from langchain.schema.messages import SystemMessage
 from langchain.prompts import PromptTemplate
 from langchain.schema import StrOutputParser
 from langchain.prompts import ChatPromptTemplate
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+api_token = os.getenv('HF_TOKEN')
 
 
 prompt = PromptTemplate.from_template(
@@ -12,7 +18,7 @@ prompt = PromptTemplate.from_template(
 )
 llm = HuggingFaceEndpoint(
         endpoint_url="https://z8dvl7fzhxxcybd8.eu-west-1.aws.endpoints.huggingface.cloud",
-        huggingfacehub_api_token=*****,
+        huggingfacehub_api_token=api_token,
         task="text2text-generation",
         model_kwargs={
             "max_new_tokens": 200
